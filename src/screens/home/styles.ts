@@ -1,6 +1,6 @@
 import { FlatList, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
-import { Product} from '../components/components';
+import { Product} from '../../components/components.tsx';
 
 export const ScreenContainer = styled(SafeAreaView)`
   flex: 1;

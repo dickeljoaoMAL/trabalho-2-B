@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product, ProductCard } from '../components/components';
+import { Product, ProductCard } from '../../components/components.tsx';
 import {
   BottomBar,
   BottomBarItem,
@@ -12,7 +12,7 @@ import {
   ScreenContainer,
   ScreenTitle,
   SearchInput,
-} from './styles';
+} from './styles.ts';
 
 const exampleProducts: Product[] = [
   {
@@ -96,7 +96,7 @@ const exampleCategories = [
   'Feminino',
 ];
 
-export function Home() {
+export function Home({ navigation }: any) {
   return (
     <ScreenContainer>
       <Header>
@@ -119,7 +119,14 @@ export function Home() {
         data={exampleProducts}
         numColumns={2}
         keyExtractor={item => String(item.id)}
-        renderItem={({ item }) => <ProductCard product={item} />}
+        renderItem={({ item }) => (
+          <ProductCard
+            product={item}
+            onPress={() =>
+              navigation.navigate('ProductDetails', { product: item })
+            }
+          />
+        )}
       />
 
       <BottomBar>
