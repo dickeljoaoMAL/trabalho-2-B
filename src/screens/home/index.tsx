@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ProductCard } from '../../components/components';
 import { getProducts } from '../../API/Api';
 import { Product } from '../../components/components';
+import { useCart } from '../../context/CartContext';
 import {
   BottomBar,
   BottomBarItem,
@@ -15,6 +16,10 @@ import {
   ScreenTitle,
   SearchInput,
 } from './styles';
+
+
+const { cart, addToCart, removeFromCart, clearCart } = useCart();
+
 
 const categories = [
   { label: 'Todos', value: 'all' },
