@@ -1,6 +1,6 @@
 import { FlatList, SafeAreaView } from 'react-native';
 import styled from 'styled-components/native';
-import { Product} from '../../components/components.tsx';
+import { Product } from '../../components/components';
 
 export const ScreenContainer = styled(SafeAreaView)`
   flex: 1;
@@ -22,8 +22,9 @@ export const SearchInput = styled.TextInput`
   padding: 0 12px;
 `;
 
-export const CategoryList = styled(FlatList<string>)`
-  margin-top: 12px;
+export const CategoryList = styled.FlatList`
+    margin-top: 12px;
+    flex-grow: 0;
 `;
 
 export const CategoryChip = styled.Pressable`
