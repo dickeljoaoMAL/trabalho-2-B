@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ProductCard } from '../../components/components'; // Ajuste conforme seus componentes
+import { ProductCard } from '../../components/components';
 import { getProducts } from '../../API/Api';
 import { Product } from '../../components/components';
 import {
@@ -87,8 +87,8 @@ export function Home({ navigation }: any) {
       <ProductGrid
         data={filteredProducts}
         numColumns={2}
-        keyExtractor={(item: Product) => String(item.id)}
-        renderItem={({ item }: { item: Product }) => (
+        keyExtractor={(item: any) => String(item.id)}
+        renderItem={({ item }: any) => (
           <ProductCard
             product={item}
             onPress={() =>
@@ -105,7 +105,7 @@ export function Home({ navigation }: any) {
         <BottomBarItem>
           <BottomBarText>Buscar</BottomBarText>
         </BottomBarItem>
-        <BottomBarItem>
+        <BottomBarItem onPress={() => navigation.navigate('Cart')}>
           <BottomBarText>Carrinho</BottomBarText>
         </BottomBarItem>
         <BottomBarItem>
